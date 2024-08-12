@@ -47,6 +47,9 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		x += -event.relative.x * x_sensitivity_mouse
 		y += -event.relative.y * y_sensitivity_mouse
+	elif Input.is_action_pressed("reset_camera"):
+		x = 0
+		y = 0
 
 func _physics_process(delta):
 	x = clamp(x, x_min, x_max)
