@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bypd2tgkfvcqk"]
+[gd_scene load_steps=5 format=3 uid="uid://bypd2tgkfvcqk"]
+
+[ext_resource type="PackedScene" uid="uid://cj62n5pfflykg" path="res://models/komaru_naegi.glb" id="1_eb7qd"]
+[ext_resource type="Script" path="res://scripts/camera_controller.gd" id="2_xtbyg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlm6f"]
 size = Vector3(8.44156, 1, 10.0305)
@@ -19,3 +22,21 @@ mesh = SubResource("BoxMesh_ta7ts")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.000680729, 1, 0, -1, -0.000680729, 0, 10, 0)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+
+[node name="MeshRoot" type="Node3D" parent="Player"]
+
+[node name="KomaruNaegi" parent="Player/MeshRoot" instance=ExtResource("1_eb7qd")]
+
+[node name="CameraRoot" type="Node3D" parent="Player"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.591631, 2.34062, -1.16625)
+script = ExtResource("2_xtbyg")
+
+[node name="CameraX" type="Node3D" parent="Player/CameraRoot"]
+
+[node name="CameraY" type="Node3D" parent="Player/CameraRoot/CameraX"]
+
+[node name="Camera3D" type="Camera3D" parent="Player/CameraRoot/CameraX/CameraY"]

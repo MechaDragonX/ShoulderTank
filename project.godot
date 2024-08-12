@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="ShoulderTank"
+run/main_scene="res://levels/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[filesystem]
+
+import/fbx/enabled=false
