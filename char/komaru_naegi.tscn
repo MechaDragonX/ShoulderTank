@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://wx6a8wcomojd"]
 
-[ext_resource type="PackedScene" uid="uid://cj62n5pfflykg" path="res://models/komaru_naegi.glb" id="1_fdlb6"]
+[ext_resource type="PackedScene" uid="uid://cj62n5pfflykg" path="res://art/models/komaru_naegi.glb" id="1_fdlb6"]
 
 [node name="AuxScene" instance=ExtResource("1_fdlb6")]

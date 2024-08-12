@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cj62n5pfflykg"
-path="res://.godot/imported/komaru_naegi.glb-aa64762448a14e90294330b5a6278fa5.scn"
+path="res://.godot/imported/komaru_naegi.glb-b25782bc70c90e7c9eebdd1b5e716ce5.scn"
 
 [deps]
 
-source_file="res://models/komaru_naegi.glb"
-dest_files=["res://.godot/imported/komaru_naegi.glb-aa64762448a14e90294330b5a6278fa5.scn"]
+source_file="res://art/models/komaru_naegi.glb"
+dest_files=["res://.godot/imported/komaru_naegi.glb-b25782bc70c90e7c9eebdd1b5e716ce5.scn"]
 
 [params]
 

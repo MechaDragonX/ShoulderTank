@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bypd2tgkfvcqk"]
 
-[ext_resource type="PackedScene" uid="uid://cj62n5pfflykg" path="res://models/komaru_naegi.glb" id="1_eb7qd"]
+[ext_resource type="PackedScene" uid="uid://cj62n5pfflykg" path="res://art/models/komaru_naegi.glb" id="1_eb7qd"]
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="2_xtbyg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlm6f"]
