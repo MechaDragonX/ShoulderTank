@@ -4,6 +4,9 @@ extends CharacterBody3D
 var move_speed: float = 8
 var turn_speed: float = 10
 
+var final_velocity: Vector3
+var final_rotation: float
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass
@@ -24,8 +27,8 @@ func _input(event):
         rotate_y(PI)
 
 func _physics_process(delta):
-    # Local rotation variable
-    var rotation: float = 0
+    final_velocity = Vector3.ZERO
+    final_rotation = 0.0
 
     # If any of the movement keys/Dpad/stick (include turning) are pressed
     if Input.is_action_pressed("movement"):
@@ -33,18 +36,21 @@ func _physics_process(delta):
         # Base values are modified by the speed,
         # and then modified by the delta to prevent movement being tied to framerate
         if Input.is_action_pressed("forward"):
-            translate(Vector3(0, 0, 1 * move_speed) * delta)
+            final_velocity = Vector3(0, 0, 1 * move_speed) * delta
         # Make sure quick turn inputs aren't pressed to prevent moving during it
         if Input.is_action_pressed("backward") && !(Input.is_action_just_released("sprint") || Input.is_action_just_released("quick_turn_secondary")):
-            translate(Vector3(0, 0, -1 * move_speed) * delta)
+            final_velocity = Vector3(0, 0, -1 * move_speed) * delta
         # Turn left and right 
         if Input.is_action_pressed("turn_left"):
-            rotation += 0.1
+            final_rotation += 0.1
         if Input.is_action_pressed("turn_right"):
-            rotation -= 0.1
-
+            final_rotation -= 0.1
+    
+    # Apply translation
+    translate(final_velocity)
     # Rotate player based base value, and turn speed and delta for same reasons as movement
-    rotate_y(rotation * turn_speed * delta)
+    rotate_y(final_rotation * turn_speed * delta)
+
 
     # Apply movement
     move_and_slide()
