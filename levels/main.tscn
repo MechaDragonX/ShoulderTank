@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bypd2tgkfvcqk"]
+[gd_scene load_steps=6 format=3 uid="uid://bypd2tgkfvcqk"]
 
 [ext_resource type="PackedScene" uid="uid://cj62n5pfflykg" path="res://art/models/komaru_naegi.glb" id="1_eb7qd"]
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="2_xtbyg"]
@@ -8,6 +8,9 @@ size = Vector3(8.44156, 1, 10.0305)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ta7ts"]
 size = Vector3(8.44156, 1, 10.0305)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6s1q"]
+height = 2.99671
 
 [node name="Main" type="Node"]
 
@@ -26,6 +29,8 @@ transform = Transform3D(1, 0, 0, 0, -0.000680729, 1, 0, -1, -0.000680729, 0, 10,
 [node name="Player" type="CharacterBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00416797, 1.00101, -0.00153589)
+shape = SubResource("CapsuleShape3D_g6s1q")
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
 
