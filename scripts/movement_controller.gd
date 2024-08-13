@@ -16,7 +16,7 @@ func _input(event):
 
 func _physics_process(delta):
     var rotation: float = 0
-    
+
     if Input.is_action_pressed("movement"):
         if Input.is_action_pressed("forward"):
             player.translate(Vector3(0, 0, 1 * move_speed) * delta)
