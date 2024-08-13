@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bypd2tgkfvcqk"]
+[gd_scene load_steps=7 format=3 uid="uid://bypd2tgkfvcqk"]
 
-[ext_resource type="PackedScene" uid="uid://cj62n5pfflykg" path="res://art/models/komaru_naegi.glb" id="1_eb7qd"]
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="2_xtbyg"]
+[ext_resource type="PackedScene" uid="uid://cgi5xkgntkddk" path="res://char/komaru_naegi.tscn" id="5_0drd6"]
+[ext_resource type="Script" path="res://scripts/movement_controller.gd" id="6_jep2a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlm6f"]
 size = Vector3(8.44156, 1, 10.0305)
@@ -28,13 +29,19 @@ transform = Transform3D(1, 0, 0, 0, -0.000680729, 1, 0, -1, -0.000680729, 0, 10,
 
 [node name="Player" type="CharacterBody3D" parent="."]
 
+[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player", "mesh_root")]
+script = ExtResource("6_jep2a")
+player = NodePath("..")
+mesh_root = NodePath("../MeshRoot")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00416797, 1.00101, -0.00153589)
 shape = SubResource("CapsuleShape3D_g6s1q")
 
 [node name="MeshRoot" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
 
-[node name="KomaruNaegi" parent="Player/MeshRoot" instance=ExtResource("1_eb7qd")]
+[node name="KomaruNaegi" parent="Player/MeshRoot" instance=ExtResource("5_0drd6")]
 
 [node name="CameraRoot" type="Node3D" parent="Player"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.591631, 2.34062, -1.16625)
