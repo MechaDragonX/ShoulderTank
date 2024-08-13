@@ -29,10 +29,11 @@ transform = Transform3D(1, 0, 0, 0, -0.000680729, 1, 0, -1, -0.000680729, 0, 10,
 
 [node name="Player" type="CharacterBody3D" parent="."]
 
-[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player", "mesh_root")]
+[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player", "mesh_root", "camera_root")]
 script = ExtResource("6_jep2a")
 player = NodePath("..")
 mesh_root = NodePath("../MeshRoot")
+camera_root = NodePath("../CameraRoot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00416797, 1.00101, -0.00153589)
@@ -44,7 +45,7 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
 [node name="KomaruNaegi" parent="Player/MeshRoot" instance=ExtResource("5_0drd6")]
 
 [node name="CameraRoot" type="Node3D" parent="Player"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.591631, 2.34062, -1.16625)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.591631, 2.34062, -1.16625)
 script = ExtResource("2_xtbyg")
 
 [node name="CameraX" type="Node3D" parent="Player/CameraRoot"]
