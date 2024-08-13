@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cj62n5pfflykg"
+uid="uid://bqcxtklgum34k"
 path="res://.godot/imported/komaru_naegi.glb-fde3b947b9d8355e7c34b5b31a579c7e.scn"
 
 [deps]
@@ -37,4 +37,4 @@ _subresources={
 }
 }
 gltf/naming_version=1
-gltf/embedded_image_handling=3
+gltf/embedded_image_handling=1
