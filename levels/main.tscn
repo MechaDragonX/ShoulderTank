@@ -29,11 +29,9 @@ transform = Transform3D(1, 0, 0, 0, -0.000680729, 1, 0, -1, -0.000680729, 0, 10,
 
 [node name="Player" type="CharacterBody3D" parent="."]
 
-[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player", "mesh_root", "camera_root")]
+[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player")]
 script = ExtResource("6_jep2a")
 player = NodePath("..")
-mesh_root = NodePath("../MeshRoot")
-camera_root = NodePath("../CameraRoot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00416797, 1.00101, -0.00153589)
