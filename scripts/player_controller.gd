@@ -51,6 +51,5 @@ func _physics_process(delta):
     # Rotate player based base value, and turn speed and delta for same reasons as movement
     rotate_y(final_rotation * turn_speed * delta)
 
-
     # Apply movement
     move_and_slide()
