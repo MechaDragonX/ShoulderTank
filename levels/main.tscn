@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/camera_controller.gd" id="2_xtbyg"]
 [ext_resource type="PackedScene" uid="uid://cgi5xkgntkddk" path="res://char/komaru_naegi.tscn" id="5_0drd6"]
-[ext_resource type="Script" path="res://scripts/movement_controller.gd" id="6_jep2a"]
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="6_jep2a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlm6f"]
 size = Vector3(8.44156, 1, 10.0305)
@@ -28,10 +28,7 @@ mesh = SubResource("BoxMesh_ta7ts")
 transform = Transform3D(1, 0, 0, 0, -0.000680729, 1, 0, -1, -0.000680729, 0, 10, 0)
 
 [node name="Player" type="CharacterBody3D" parent="."]
-
-[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player")]
 script = ExtResource("6_jep2a")
-player = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00416797, 1.00101, -0.00153589)
