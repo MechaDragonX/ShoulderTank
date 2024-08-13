@@ -30,23 +30,8 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
-"meshes": {
-"AuxScene_mesh10": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/make_streamable": "",
-"save_to_file/path": ""
-}
-},
 "nodes": {
-"PATH:Node/Mesh10": {
-"import/skip_import": true
-},
-"PATH:Node/Mesh6": {
+"PATH:AnimationPlayer": {
 "import/skip_import": true
 }
 }
