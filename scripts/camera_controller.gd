@@ -40,11 +40,12 @@ func _ready():
 func _process(delta):
     # Check for controller stick movement every frame, as opposed to with input events
     # since that happened to fix sttutering
-    if Input.get_connected_joypads().size() > 0:
+    if Input.is_action_pressed("camera_up") || Input.is_action_pressed("camera_down"):
         # If so, change the x and y rotation by the sensitivity value
         # Negate the raw value to make sure moving right moves it right
-        x += -Input.get_joy_axis(0, 2) * x_sensitivity_con
         y += -Input.get_joy_axis(0, 3) * y_sensitivity_con
+    if Input.is_action_pressed("camera_left") || Input.is_action_pressed("camera_right"):
+        x += -Input.get_joy_axis(0, 2) * x_sensitivity_con
 
 func _input(event):
     # Check to see if the mouse was moved
